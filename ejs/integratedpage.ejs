@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planify App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css_chat/style.css" />
+
+    <style>
+        body {
+height: 100%;
+margin: 0;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+background-color: #f4f4f4;
+}
+.eventlocation {
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack events vertically */
+    align-items: flex-start; /* Align items to the start of the container */
+    gap: 20px;
+}
+
+.event {
+    /*width: 50%;*/
+    width: 400px;
+    height: 20px; /* Take full width to fit content on the same line */
+    display: flex;
+    justify-content: flex-start; /* Align items to the start horizontally */
+    align-items: center; /* Align items center vertically */
+    border-radius: 8px;
+    background-color: #F9F9F9;
+    padding: 10px 20px; /* Adjust padding for tighter fit */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.event .text-content {
+    display: flex;
+    flex-grow: 1;
+    align-items: center; /* Center the text content vertically */
+}
+
+.event h3, .event p {
+    margin: 0 10px;
+    color: #45413E; /* Add margin between the time and the event name */
+}
+
+
+
+nav {
+    color: #45413E;;
+    font-weight: 600;
+    height: 64px;
+    background: #FFFFFF; /* Changed to white */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 5%;
+    border-bottom: 1px solid rgba(246, 244, 244, 0.1);
+    z-index: 100;
+}
+
+nav ul.navigation-menu {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    position: relative;
+    top: 0;
+}
+
+nav .navigation-menu a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #45413E;;
+}
+
+nav .navigation-menu > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav .navigation-menu > li > a {
+    position: relative;
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}   
+.navigation-menu li a:hover,
+.navigation-menu li .dropdown:hover a { /* This targets the "See & Do" dropdown trigger */
+    background-color: #f3f0f0; /* A specified color for hover */
+    border-radius: 8px; /* Rounded corners for the hover effect */
+    
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #FFFFFF; /* Dropdown button background color */
+    color: #45413E; /* Dropdown button text color */
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0; /* Aligns the dropdown content left edge with the dropdown button */
+    top: 100%; /* Positions the dropdown content directly below the dropdown button */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Ensure this is above other content but consider other elements' z-index */
+    border-radius: 4px; /* Optional: Adds rounded corners */
+    /* margin-top: 5px; Creates a small gap between the dropdown button and the content */
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #ddd;}
+
+
+/* Adjust chat container size */
+.chat-container {
+  flex: 1; /* Take up only needed space */
+  max-width: 600px; /* Adjusted for side-by-side display */
+  margin: 0; /* Remove margin for side-by-side */
+}
+
+/* New style for plan container to match chat */
+.layout-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between chatroom and plan */
+  margin: 20px;
+}
+
+/* Adjust chat container size */
+.plan-container {
+  flex: 1; /* Allocate more space to the plan container compared to chat *//* Increase max-width as needed for more width */
+  width: 400px; /* Ensure it doesn't get too small on narrower screens */
+  background: #fff;
+  padding: 20px;
+  margin-right: 20px; /* Ensure some space between this container and the chat */
+  border-radius: 5px; /* Optional for aesthetics */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional for aesthetics */
+}
+
+/* Maintain the chat container size */
+.chat-container {
+  flex: 1; /* Keep the chat container size consistent */
+  width: 550px; /* Keep the chat container's maximum width */
+  margin: 0; /* Adjust as necessary */
+}
+
+/* Adjustments for the text area within the plan-messages */
+.plan-messages {
+  max-height: 500px; /* Match chat message box height */
+  overflow-y: scroll; /* Allow scrolling */
+  padding: 15px;
+  border-radius: 5px; /* Match chat message box */
+  background: #F9F9F9; /* Light beige background */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Match chat message box background */
+}
+
+/* Further enhance text visibility */
+.event h3, .event p {
+  font-size: 1.0rem; /* Increase font size for better readability */
+  margin: 5px 2px; /* Adjust margin for spacing */
+}
+
+/* Adjust heading and body font sizes for better readability */
+.chat-header, .plan-header {
+  font-size: 1.1rem; /* Increase header font size */
+}
+
+.chat-messages, .plan-messages {
+  font-size: 1rem; /* Adjust message font size for readability */
+}
+#invitation-code {
+  display: block; /* Use block for individual elements like h1 */
+  text-align: center; /* This centers the text within the element */
+  width: 100%; /* Ensures it spans the full width if needed */
+  color: #807147; /* Just to confirm the CSS is applying */
+}
+/* Adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .layout-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chat-container, .plan-container {
+    max-width: 100%;
+  }
+}
+
+
+    </style>
+    </head>
+    <body>
+        
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/homepage">Planify</a>
+            </div>
+            <ul class="navigation-menu">
+                <li><a href="/homepage" class="tablink">Home</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)">See & Do</a> <!-- Changed href to javascript:void(0) for dropdown -->
+                    <div class="dropdown-content">
+                        <a href="/recplaces">Recommended Places</a>
+                        <a href="/recplan">Recommended Plans</a>
+                    </div>
+                </li>
+                <li><a href="/makeaplan" class="tablink">Make a Plan</a></li>
+                <li><a href="/Plan" class="tablink">My Plans</a></li>
+                <li><a href="/billsplitting" class="tablink">Bill Splitting</a></li>
+                <li><a href="/settings" class="tablink">Settings</a></li>
+            </ul>
+        </nav>
+        <h1 id="invitation-code">Invitation Code: <%= invitation %></h1>
+        <div class="layout-container">
+            <!-- Plan Container -->
+            <div class="plan-container">
+                <div class="plan-messages">
+                    <!-- Plan details go here -->
+                    <section class="eventlocation">
+                        <h2><%= planname %> </h2>
+                        <% for(const [event, time] of Object.entries(events)) { %>
+                            <article class="event">
+                                <div class="text-content">
+                                    <h3><%= time %></h3>
+                                    <p><%= event %></p>
+                                </div>
+                            </article>
+                        <% } %>
+                    </section>
+                </div>
+            </div>
+        
+            <!-- Chat Container (Existing Chatroom HTML) -->
+            <div class="chat-container">
+                <!-- Existing chatroom content -->
+                <div class="chat-container">
+                    <header class="chat-header">
+                        <h1><i class="fas fa-smile"></i> PLANIFY</h1>
+                        <a id="leave-btn" class="btn">Leave Room</a>
+                    </header>
+                    <main class="chat-main">
+            
+                        <div class="chat-sidebar">
+                          <h3><i class="fas fa-comments"></i></h3>
+                          <h2 id="invitation-code"></h2>
+                          <h3><i class="fas fa-users"></i> </h3>
+                          <ul id="users"></ul>
+                        </div>
+                        <div class="chat-messages"></div>
+                      </main>
+                      <div class="chat-form-container">
+                        <form id="chat-form">
+                          <input
+                            id="msg"
+                            type="text"
+                            placeholder="Enter Message"
+                            required
+                            autocomplete="off"
+                          />
+                          <button id="send-btn" class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+                        </form>
+            </div>
+        </div>
+</div>
+</div>
+
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.12.0/qs.min.js" integrity="sha512-7guIquo9is/MQs1wfLZyVViTlsvrIoHdnSzoFmPvPMDpqjL2fvDqcVKpaZ9PS3Sbf6DLBRUUZ5X3jcQ/wotWow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/socket.io/socket.io.js"></script>
+<!--<script src="./js_chat/main.js"></script>-->
+<script>
+
+const socket = io();
+const chatForm = document.getElementById('chat-form');
+const chatMessages = document.querySelector('.chat-messages');
+const roomName = document.getElementById('invitation'); //here  is where the roomname is taken from the user interaction with index.html file and reflects in chat.html
+const userList = document.getElementById('users');
+//Get username and room from url
+
+
+const {username, invitation} = Qs.parse(location.search, {
+    ignoreQueryPrefix: true
+});
+socket.emit('joinRoom', { username: "<%= username %>", invitation: "<%= invitation %>" });
+
+//get room and users 
+socket.on('roomUsers', ({room, users }) =>{
+    outputRoomName(invitation);
+    outputUsers(users);
+})
+
+
+//message from server
+socket.on('message', message =>{
+    console.log(message);
+    outputMessage(message);
+
+    //Scroll down action
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+});
+
+//create an eventListener (message submit)
+chatForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const msg = e.target.elements.msg.value;
+
+    //emit message to server
+    socket.emit('chatMessage', msg);
+
+    //clear user input 
+    e.target.elements.msg.value = '';
+    e.target.elements.msg.focus();
+});
+
+
+//output message to dom
+function outputMessage(message){
+    const div = document.createElement('div');
+    div.classList.add('message');
+    div.innerHTML = `
+    <p class="meta">${message.username} <span>${message.time}</span></p>
+    <p class="text">
+        ${message.text}
+    </p>`;
+    document.querySelector('.chat-messages').appendChild(div);
+}
+
+// add room name to dom
+function outputRoomName(invitation){
+    roomName.innerText = invitation;
+}
+
+//add users to DOM
+function outputUsers(users){
+    userList.innerHTML = `
+        ${users.map(user => `<li>${user.username}</li>`).join('')}
+    
+    `;
+}
+
+
+
+document.getElementById('leave-btn').addEventListener('click', () => {
+    const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
+    if (leaveRoom) {
+      window.location = '/joinroom';
+    } else {
+    }
+});
+
+
+
+
+</script>
+
+
+
+    </body>

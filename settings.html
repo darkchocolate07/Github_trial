@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Settings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+    
+<body>
+    <style>
+    .navbar {
+    color: #45413E;
+    font-weight: 600;
+    height: 64px;
+    background-color: #FFFFFF; /* Ensure background-color is used for clarity */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 5%;
+    border-bottom: 1px solid rgba(246, 244, 244, 0.1);
+    z-index: 100;
+}
+
+
+.navbar .logo a {
+    font-size: 36px; /* Adjusted to match your previous ".logo a" style */
+    font-weight: bold;
+    color: #161748; /* Assuming you want to keep the logo style */
+    text-decoration: none;
+}
+
+.navigation-menu {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    position: relative;
+    top: 0;
+}
+
+.navigation-menu a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #45413E;
+}
+
+.navigation-menu > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navigation-menu > li > a {
+
+    position: relative;
+    height: 64px;
+    padding: 0 20px;
+    display: flex; 
+    align-items: center;
+    justify-items: center;
+    
+}
+
+/* Hover effect to match previous functionality */
+/* .navigation-menu li a:hover {
+    background-color: #edd7d4;
+    border-radius: 8px;
+} */
+
+.navigation-menu li a:hover,
+.navigation-menu li .dropdown:hover a { /* This targets the "See & Do" dropdown trigger */
+    background-color: #f3f0f0; /* A specified color for hover */
+    border-radius: 8px; /* Rounded corners for the hover effect */
+    
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #FFFFFF; /* Dropdown button background color */
+    color: #45413E; /* Dropdown button text color */
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0; /* Aligns the dropdown content left edge with the dropdown button */
+    top: 100%; /* Positions the dropdown content directly below the dropdown button */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Ensure this is above other content but consider other elements' z-index */
+    border-radius: 4px; /* Optional: Adds rounded corners */
+    /* margin-top: 5px; Creates a small gap between the dropdown button and the content */
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #ddd;}
+
+    </style>
+    <nav class="navbar">
+      <div class="logo">
+          <a href="/homepage">Planify</a>
+      </div>
+      <ul class="navigation-menu">
+          <li><a href="/homepage" class="tablink">Home</a></li>
+          <li class="dropdown">
+              <a href="javascript:void(0)">See & Do</a> <!-- Changed href to javascript:void(0) for dropdown -->
+              <div class="dropdown-content">
+                  <a href="/recplaces">Recommended Places</a>
+                  <a href="/recplan">Recommended Plans</a>
+              </div>
+          </li>
+          <li><a href="/makeaplan" class="tablink">Make a Plan</a></li>
+          <li><a href="/Plan" class="tablink">My Plans</a></li>
+          <li><a href="/billsplitting" class="tablink">Bill Splitting</a></li>
+          <li><a href="/settings" class="tablink">Settings</a></li>
+      </ul>
+  </nav>
+
+
+
+
+
+    <div class="container mt-5">
+      
+      <!-- /Breadcrumb -->
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-username" aria-selected="true">Profile</a>
+            <a class="nav-link" id="v-pills-email-tab" data-toggle="pill" href="#v-pills-email" role="tab" aria-controls="v-pills-email" aria-selected="true">Update Email</a>
+            <a class="nav-link" id="v-pills-username-tab" data-toggle="pill" href="#v-pills-username" role="tab" aria-controls="v-pills-username" aria-selected="false">Update Username</a>
+            <a class="nav-link" id="v-pills-password-tab" data-toggle="pill" href="#v-pills-password" role="tab" aria-controls="v-pills-password" aria-selected="false">Update Password</a>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="tab-content" id="v-pills-tabContent">
+
+            <!-- User Profile -->
+            <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <h2>Profile Information</h2>
+                <p><strong>Name:</strong> <%= name %></p>
+                <p><strong>Email:</strong> <%= email %></p>
+            </div>
+
+            <!-- Update Email Form -->
+            <div class="tab-pane fade show" id="v-pills-email" role="tabpanel" aria-labelledby="v-pills-email-tab">
+              <h2>Update Email</h2>
+              <form action="/updateEmail" method="POST">
+                <div class="form-group">
+                  <label for="email">New Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Email</button>
+              </form>
+            </div>
+            <!-- Update Username Form -->
+            <div class="tab-pane fade" id="v-pills-username" role="tabpanel" aria-labelledby="v-pills-username-tab">
+              <h2>Update Username</h2>
+              <form action="/updateUsername" method="POST">
+                <div class="form-group">
+                  <label for="username">New Username</label>
+                  <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Username</button>
+              </form>
+            </div>
+            <!-- Update Password Form -->
+            <div class="tab-pane fade" id="v-pills-password" role="tabpanel" aria-labelledby="v-pills-password-tab">
+              <h2>Update Password</h2>
+              <form action="/updatePassword" method="POST">
+                <div class="form-group">
+                  <label for="password">New Password</label>
+                  <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Password</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

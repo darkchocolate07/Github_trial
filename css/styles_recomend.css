@@ -1,0 +1,350 @@
+.navbar {
+    color: #45413E;
+    font-weight: 600;
+    height: 64px;
+    background-color: #FFFFFF; /* Ensure background-color is used for clarity */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 5%;
+    border-bottom: 1px solid rgba(246, 244, 244, 0.1);
+    z-index: 100;
+}
+
+
+.navbar .logo a {
+    font-size: 36px; /* Adjusted to match your previous ".logo a" style */
+    font-weight: bold;
+    color: #161748; /* Assuming you want to keep the logo style */
+    text-decoration: none;
+}
+
+.navigation-menu {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    position: relative;
+    top: 0;
+}
+
+.navigation-menu a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #45413E;
+}
+
+.navigation-menu > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navigation-menu > li > a {
+
+    position: relative;
+    height: 64px;
+    padding: 0 20px;
+    display: flex; 
+    align-items: center;
+    justify-items: center;
+    
+}
+
+/* Hover effect to match previous functionality */
+/* .navigation-menu li a:hover {
+    background-color: #edd7d4;
+    border-radius: 8px;
+} */
+
+.navigation-menu li a:hover,
+.navigation-menu li .dropdown:hover a { /* This targets the "See & Do" dropdown trigger */
+    background-color: #f3f0f0; /* A specified color for hover */
+    border-radius: 8px; /* Rounded corners for the hover effect */
+    
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #FFFFFF; /* Dropdown button background color */
+    color: #45413E; /* Dropdown button text color */
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0; /* Aligns the dropdown content left edge with the dropdown button */
+    top: 100%; /* Positions the dropdown content directly below the dropdown button */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Ensure this is above other content but consider other elements' z-index */
+    border-radius: 4px; /* Optional: Adds rounded corners */
+    /* margin-top: 5px; Creates a small gap between the dropdown button and the content */
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #ddd;}
+
+
+
+
+
+/* Recommended places styles */
+ .recommended-places {
+        
+        margin-left: 500px; /* Make space for the sidebar */
+        margin-top: 50px;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start; /* Align cards to the start of the container */
+    }
+    
+    .place-card {
+        width: calc(75% - 15px);
+        display: flex;
+        align-items: flex-start; /* Align items to the start vertically */
+        border-radius: 8px;
+        background-color: #f3f0f0;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        gap: 20px; /* Ensure there's space between the image and the text */
+    }
+    
+    .place-card img {
+        flex-shrink: 0; /* Prevent the image from shrinking */
+        width: 45%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    
+    .place-card .text-content {
+        flex-grow: 1;
+        padding-left: 20px; /* Add some padding to the left of the text content */
+    }
+    
+    @media (max-width: 500px) {
+        .place-card {
+            flex-direction: column;
+        }
+    
+        .place-card img {
+            width: 100%; /* Image takes full width in a stacked layout */
+            height: auto; /* Adjust height automatically */
+        }
+    
+        .place-card .text-content {
+            padding-left: 0; /* Reset padding for smaller screens */
+            padding-top: 10px; /* Add some space between the image and the text content */
+        }
+    }
+    
+    
+    
+    /* Filter card styles */
+    .filter-card {
+        position: fixed;
+        
+        left: 200px; /*Adjust based on your layout */
+        top: 200px; /* Adjust based on your navbar height */
+        width: 200px;
+        background-color: #f3f0f0; /* darker shade for hover */
+        
+        color: #161748;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .filter-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 24px;
+        font-weight: bold;
+        color: #161748;
+        text-decoration: none;
+        border-bottom: 1px solid #ccc; /* This creates the line below the title */
+    }
+    
+    .filter-options {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .filter-option {
+        margin: 10px 0;
+    }
+    
+    .filter-option label {
+        margin-left: 8px;
+    }
+    
+    /* Custom checkbox styles */
+    input[type="checkbox"] {
+        accent-color: #0f0e0f; /* Changes the color of the checkbox */
+        cursor: pointer;
+    }
+    
+
+
+
+
+
+/* Full-width image styles */
+.full-width-image {
+    position: relative; /* This enables absolute positioning relative to this container */
+    overflow: hidden;
+
+    
+    width: 70%;
+    margin: 0 auto;
+    height: 400px; /* Maintain aspect ratio */
+}
+
+.full-width-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* This will remove any default margins */
+}
+
+.image-overlay {
+    position: absolute; /* Absolute positioning relative to the parent .full-width-image */
+    top: 30%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset the element by half its own size to truly center it */
+    color: white; /* White text */
+    text-align: center; /* Center text alignment */
+    width: 100%; /* Take full width to center the text properly */
+}
+
+/* Optional: Add a semi-transparent background to the text for better readability */
+.image-overlay h1,
+.image-overlay p {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 0.5em 1em; /* Some padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    margin: 0.5em; /* Space between title and paragraph */
+}
+
+/* Ensuring the overlay text is readable on smaller screens */
+@media (max-width: 768px) {
+    .image-overlay h1 {
+        font-size: 2.6em; /* Smaller text on mobile devices */
+    }
+
+    .image-overlay p {
+        font-size: 1em; /* Smaller paragraph text on mobile devices */
+    }
+}
+
+
+.central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+
+
+
+.district-title {
+    text-align: center; /* Center the title text */
+    margin-top: 20px; /* Provide some space above the title */
+    margin-bottom: 20px; /* Provide some space below the title */
+    font-size: 2em; /* Make the title larger */
+    color: #333; /* Set the title color */
+}
+
+.time-slot {
+    margin: 20px;
+    text-align: center;
+}
+
+.time-label {
+    background-color: #e8e8e8;
+    border-radius: 50%;
+    width: 65px;
+    height: 50px;
+    line-height: 50px;
+    margin: auto;
+    margin-bottom: 130px;
+}
+
+.card {
+    width: 200px; /* Adjust width as needed */
+    height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    background-color: #f3f0f0;
+    font-weight: bold;
+}
+
+.time-slot {
+    display: flex;
+    justify-content: center; /* Center cards horizontally */
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    gap: 20px; /* Space between cards */
+    margin-bottom: 40px; /* Space between time slots */
+}
+
+.card img {
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    
+}
+
+.card-title {
+    padding: 10px;
+}
+
+/* Style the cards grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Add responsive breakpoints as needed */
+@media (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

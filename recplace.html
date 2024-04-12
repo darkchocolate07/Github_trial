@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navigation Bar</title>
+<link rel="stylesheet" href="./css/styles_recomend.css">
+</head>
+<body>
+
+<header class="main-header">
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/homepage">Planify</a>
+        </div>
+        <ul class="navigation-menu">
+            <li><a href="/homepage" class="tablink">Home</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)">See & Do</a> <!-- Changed href to javascript:void(0) for dropdown -->
+                <div class="dropdown-content">
+                    <a href="/recplaces">Recommended Places</a>
+                    <a href="/recplan">Recommended Plans</a>
+                </div>
+            </li>
+            <li><a href="/makeaplan" class="tablink">Make a Plan</a></li>
+            <li><a href="/Plan" class="tablink">My Plans</a></li>
+            <li><a href="/billsplitting" class="tablink">Bill Splitting</a></li>
+            <li><a href="/settings" class="tablink">Settings</a></li>
+        </ul>
+    </nav>
+           
+
+    <aside class="filter-card">
+        <div class="filter-title">Filters</div>
+        <form class="filter-options">
+            <div class="filter-option">
+                <input type="checkbox" id="food & dining" name="filter" value="Food & Dining">
+                <label for="food & dining">Food & Dining</label>
+            </div>
+            <div class="filter-option">
+                <input type="checkbox" id="instagrammable" name="filter" value="Instagrammable">
+                <label for="instagrammable">Instagrammable</label>
+            </div>
+            <div class="filter-option">
+                <input type="checkbox" id="culture & heritage" name="filter" value="Culture & Heritage">
+                <label for="culture & heritage">Culture & Heritage</label>
+            </div>
+            <div class="filter-option">
+                <input type="checkbox" id="recreation & leisure" name="filter" value="Recreation & Leisure">
+                <label for="recreation & leisure">Recreation & Leisure</label>
+            </div>
+            <div class="filter-option">
+                <input type="checkbox" id="nature & wildlife" name="filter" value="Nature & Wildlife">
+                <label for="nature & wildlife">Nature & Wildlife</label>
+            </div>
+            <div class="filter-option">
+                <input type="checkbox" id="nightlife" name="filter" value="Nightlife">
+                <label for="nightlife">Nightlife</label>
+            </div>
+            
+            <!-- More checkboxes for other categories -->
+        </form>
+    </aside>
+    
+    </aside>
+
+
+    <main>
+        <section class="recommended-places">
+
+            <!-- place card -->
+
+            <article class="place-card" data-category1="Food & Dining" data-additional-category1="Instagrammable">
+                <img src="https://live.staticflickr.com/65535/48912665341_175927d38f_h.jpg" alt="Food & Dining">
+                <div class="text-content">
+                    <h3>Petit Pain Bakery</h3>
+                    <p>Estimated time spent: 2 hours</p>
+                    <p>Price per person: $1-10</p>
+                    <p>Address: 315 Joo Chiat Road Singapore 427566</p>
+                </div>
+            </article>
+
+            <article class="place-card" data-category1="Food & Dining">
+                <img src="https://danielfooddiary.com/wp-content/uploads/2019/09/connect712.jpg" alt="Instagrammable">
+                <div class="text-content">
+                    <h3>Connect 71 @NTU</h3> 
+                    <p>Estimated Time Spent: 2 hours</p>
+                    <p>Price per person: $10-20</p>
+                    <p>Address: 71 Nanyang Dr, level 3, Singapore 638075</p>
+                </div>
+            </article>
+
+
+            <article class="place-card" data-category1="Food & Dining">
+                <!-- Image, Title, and Description here -->
+                <img src="https://media.timeout.com/images/105669968/1372/1029/image.webp" alt="Restaurant">
+                <div class="text-content">
+                    <h3>Café Kreams</h3> 
+                    <p>Estimated Time Spent: 2 hours</p>
+                    <p>Price per person: $10–30</p> 
+                    <p>Address: 32 Maxwell Rd, #01-07 Maxwell Chambers, Singapore 069115</p>
+                </div>
+            </article>
+
+
+            <article class="place-card" data-category1="Instagrammable">
+                <img src="https://www.visitsingapore.com/see-do-singapore/arts/performance-arts/museum-of-ice-cream-singapore/jcr:content/par-carousel/carousel_detailpage/carousel/item0.thumbnail.carousel-img.1480.833.jpg" alt="Ice cream musuem">
+                <div class="text-content">
+                    <h3>Museum of Ice Cream Singapore</h3> 
+                    <p>Estimated Time Spent: 3 hours</p>
+                    <p>Price per person: $50-60</p>
+                    <p>Address: 100 Loewen Rd, Singapore 248837</p>
+                </div>
+            </article>
+
+            <article class="place-card" data-category1="Recreation & Leisure">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPnD7qZa34fpONMMu9S75mRDeFcHUcjsTxv5LuH=s1360-w1360-h1020" alt="Restaurant">
+                <div class="text-content">
+                    <h3>Universal Studios Singapore</h3> 
+                    <p>Estimated Time Spent: 6 hours</p>
+                    <p>Price per person: $90-100</p>
+                    <p>Address: 8 Sentosa Gateway, 098269</p>
+            </div>           
+            </article>
+
+            <article class="place-card" data-category1="Recreation & Leisure">
+                <img src="https://media1.thrillophilia.com/filestore/pooe4ai8h2af08sdta49s65e5v1x_siloso%20beach-min.jpg?w=400&dpr=2" alt="Restaurant">
+                <div class="text-content">
+                    <h3>Siloso Beach</h3> 
+                    <p>Estimated Time Spent: 5 hours</p>
+                    <p>Price per person: $0</p>
+                    <p>Address: 51 Imbiah Walk, 099538</p>
+                </div>   
+            </article>
+
+            <article class="place-card" data-category1="Nature & Wildlife">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipOFZrjQhxJJdPjNJzC_ZZXgdC_LHO4Qibv0ZA9K=s1360-w1360-h1020" alt="Restaurant">
+                <div class="text-content">
+                    <h3>Singapore Botanic Gardens</h3> 
+                    <p>Estimated Time Spent: 3 hours</p>
+                    <p>Price per person: $0</p>
+                    <p>Address: 1 Cluny Rd, Singapore 259569</p>
+                </div>   
+            </article>
+
+            <article class="place-card" data-category1="Nature & Wildlife">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipMXC14V9OwQgxvO-WpoZxAoxzDv9ZVA_l2x-DgX=s1360-w1360-h1020" alt="Restaurant">
+                <div class="text-content">
+                    <h3>Singapore Zoo</h3> 
+                    <p>Estimated Time Spent: 5 hours</p>
+                    <p>Price per person: $40-50</p>
+                    <p>Address: 80 Mandai Lake Rd, 729826</p>
+                </div>    
+            </article>
+
+            <article class="place-card" data-category1="Instagrammable">
+                <img src="https://media.timeout.com/images/105744422/image.jpg" alt="Restaurant">
+                <div class="text-content">
+                    <h3>Jewel Changi Airport</h3> 
+                    <p>Estimated Time Spent: 4 hours</p>
+                    <p>Price per person: $0</p>
+                    <p>Address: 78 Airport Boulevard, Singapore 819666 Singapore.</p>
+                </div>     
+            </article>
+
+            <article class="place-card" data-category1="Recreation & Leisure">
+                <img src="https://media1.thrillophilia.com/filestore/lt725cud4xylcktwunefeitjye2g_shutterstock_781465771%20(3).jpg" alt="Restaurant">
+                <div class="text-content">
+                    <h3>Wild Wild Wet</h3> 
+                    <p>Estimated Time Spent: 4 hours</p>
+                    <p>Price per person: $30-40</p>
+                    <p>Address: 1 Pasir Ris Cl, Singapore 519599</p>
+                </div>    
+            </article>
+
+            <article class="place-card" data-category1="Instagrammable">
+                <img src="https://media.timeout.com/images/106082065/1372/1029/image.webp" alt="Restaurant">
+                <div class="text-content">
+                    <h3>Paaru.bakery (パール べーカリー)</h3> 
+                    <p>Estimated Time Spent: 2 hours</p>
+                    <p>Price per person: $10-20</p>
+                    <p>Address: 195 Pearl's Hill Terrace, #01 18, Singapore 168976</p>
+                </div>     
+            </article>
+
+            <article class="place-card" data-category1="Recreation & Leisure">
+                <img src="https://hallinteriors.sg/wp-content/uploads/2019/08/king-and-pawn-08-1024x683.jpeg" alt="Restaurant">
+                <div class="text-content">
+                    <h3>King and the Pawn Board Game Cafe</h3> 
+                    <p>Estimated Time Spent: 4 hours</p>
+                    <p>Price per person: $10-20</p>
+                    <p>Address: 24 Purvis St, level 2, Singapore 188601</p>
+                </div>     
+            </article>
+
+            <article class="place-card" data-category1="Nightlife">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipMdtCjyYuUzRxZogjAnlDfoeA5K4twFfvIKzadC=s1360-w1360-h1020" alt="Restaurant">
+                <div class="text-content">
+                    <h3>MARQUEE Singapore</h3> 
+                    <p>Estimated Time Spent: 4 hours</p>
+                    <p>Price per person: $100-400</p>
+                    <p>Address: 2 Bayfront Avenue B1-67, Galleria Level, The Shoppes at Marina Bay Sands, 018972</p>
+                </div>     
+            </article>
+            
+            <article class="place-card" data-category1="Culture & Heritage">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipNTNj8PXxkr0DhWRppprngNmXQeHgIU4Fvbu5dr=s1360-w1360-h1020" alt="Restaurant">
+                <div class="text-content">
+                    <h3>National Museum of Singapore</h3> 
+                    <p>Estimated Time Spent: 3 hours</p>
+                    <p>Price per person: $10-20</p>
+                    <p>Address: 93 Stamford Rd, Singapore 178897</p>
+                </div>     
+            </article>
+
+            <article class="place-card" data-category1="Culture & Heritage">
+                <img src="https://dplusa.s3-ap-southeast-1.amazonaws.com/uploads/d-a-design-and-architecture-national-gallery-singapore-ngs-8.jpg" alt="Restaurant">
+                <div class="text-content">
+                    <h3>National Gallery Singapore</h3> 
+                    <p>Estimated Time Spent: 3 hours</p>
+                    <p>Price per person: $10-20</p>
+                    <p>Address: 24 Purvis St, level 2, Singapore 188601</p>
+                </div>     
+            </article>   
+        </section>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+</html>

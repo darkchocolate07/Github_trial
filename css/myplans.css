@@ -1,0 +1,105 @@
+
+
+
+body {
+height: 100%;
+margin: 0;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+background-color: #f4f4f4;
+}
+
+code {
+font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.eventlocation {
+    
+    margin-left: 500px; /* Make space for the sidebar */
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* Align cards to the start of the container */
+}
+
+.event {
+    width: calc(75% - 15px);
+    display: flex;
+    align-items: flex-start; /* Align items to the start vertically */
+    border-radius: 8px;
+    background-color: #f3f0f0;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    gap: 20px; /* Ensure there's space between the image and the text */
+}
+
+
+
+.event .text-content {
+    flex-grow: 1;
+    padding-left: 20px; /* Add some padding to the left of the text content */
+}
+
+@media (max-width: 500px) {
+    .event {
+        flex-direction: column;
+    }
+
+
+
+    .event .text-content {
+        padding-left: 0; /* Reset padding for smaller screens */
+        padding-top: 10px; /* Add some space between the image and the text content */
+    }
+}
+nav {
+    color: #45413E;;
+    font-weight: 600;
+    height: 64px;
+    background: #FFFFFF; /* Changed to white */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 5%;
+    border-bottom: 1px solid rgba(246, 244, 244, 0.1);
+    z-index: 100;
+}
+
+nav ul.navigation-menu {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    position: relative;
+    top: 0;
+}
+
+nav .navigation-menu a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #45413E;;
+}
+
+nav .navigation-menu > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav .navigation-menu > li > a {
+    position: relative;
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}   
+
+

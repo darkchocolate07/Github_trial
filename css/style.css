@@ -1,0 +1,23 @@
+.signup_background {
+    /*background-color: #070707;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Hiking_to_the_Ice_Lakes._San_Juan_National_Forest%2C_Colorado.jpg/1200px-Hiking_to_the_Ice_Lakes._San_Juan_National_Forest%2C_Colorado.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;*/
+  }
+  .signup-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    background-color: #83f28f;
+  }
+  .form-label {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: -1rem;
+    font-size: small;
+    color: #6c757d;
+  }
+

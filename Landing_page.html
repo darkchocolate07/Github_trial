@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planify! | Plan Activities | Go Out with Friends | Have Fun </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="landing-page-bg">
+    <section id="Header"class="header-background">
+        <div class="container">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 px-2">
+                <h2 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">PLANIFY</h2>
+              <div class="col-md-3 text-end">
+                <button type="button" class="btn btn-outline-dark me-2" onclick="window.location.href='/login'">Login</button>
+                <button type="button" class="btn btn-outline-dark me-2" onclick="window.location.href='/signup'">Sign-up</button>
+                <button type="button" class="btn btn-outline-dark" onclick="window.location.href='/joinroom'">Join</button>
+              </div>
+            </header>
+          </div>
+    </section>
+    <div class=" container border-top"></div>
+    <section id="Heroes" class="heroes-background mt-5">
+        <div class="container col-xxl-8 px-4 ">
+            <div class="row flex-lg-row-reverse align-items-center g-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="./images/landing_page1.jpg" class="landing-image d-block mx-lg-auto img-fluid" alt="planner" style="height: 500px; width: auto;" loading="lazy">
+                <script>
+                const image = document.querySelector('.landing-image');
+                  // Log the 'src' attribute
+                  console.log(image.src);</script>
+              </div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Connect, Plan, and Enjoy</h1>
+                <p class="lead">Discover the ease of planning activities for friends, businesses, and schools with Planify. Our platform streamlines event organization, enabling memorable experiences through real-time collaboration and customizable tools. Start creating, connecting, and enjoying now.</p>
+              </div>
+            </div>
+          </div>
+    </section>
+    </div>
+
+   
+
+    <section id="Features" class="features-background">
+        <div class="container px-4 py-5" id="featured-3">
+            <h2 class="pb-2 border-bottom">Features</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                  <img src="./images/map_features.jpeg" height="100">
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Interactive Map</h3>
+                <p>The interactive map feature allows users to visually explore event locations, effortlessly plan routes, and discover nearby amenities, enhancing the planning experience with intuitive, real-time navigation</p>
+              </div>
+              <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                  <img src="./images/recommending_plan_features.jpg" height="100">
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Recommend Plan</h3>
+                <p>Our intelligent plan recommendation system tailors suggestions to your preferences, streamlining the decision-making process by offering personalized options that fit your group's interests and needs.</p>
+              </div>
+              <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                  <img src="./images/chatroom_features.png" height="100">
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Chatroom</h3>
+                <p>Our chatroom feature fosters real-time communication among friends, enabling seamless collaboration and instant sharing of ideas to enhance the planning process.</p>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <div class=" container border-top"></div>
+    <section id="Footer" class="Footer-Background">
+        <div class="container">
+            <footer class="py-5">
+              <div class="row">
+                <div>
+                  <h5>About Us</h5>
+                    <p>Welcome to Planify, where every plan leads to an unforgettable experience.
+                        In a world that's busier than ever, finding time to connect with those who matter most can sometimes
+                         feel like an insurmountable task. At Planify, we believe that the joy of real-world interactions 
+                         should be celebrated and made effortless. Born from a desire to enhance the way we come together, our platform 
+                         serves as the bridge between intention and action, enabling friends, businesses, and educational institutions to 
+                         seamlessly organize gatherings that spark joy, foster community, and create lasting memories.</p>
+                </div>    
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>© 2024 Planify, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="./images/twitter.png" alt="Twitter" width="24" height="22"></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="./images/instagram.jpg" alt="Instagram" width="35" height="35"></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="./images/facebook.png" alt="Facebook" width="35" height="35"></a></li>
+                    
+                </ul>
+              </div>
+            </footer>
+          </div>
+    </section>
+
+</body>
+</html>
